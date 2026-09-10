@@ -17,10 +17,10 @@ public class TankSimulator extends Frame {
 
     private Label lblUeberschrift = new Label("Tank-Simulator");
 
-    // ProgressBar von 0 bis 100 %
+    
     public JProgressBar progressBar = new JProgressBar(0, 100);
 
-    // Anzeige des Füllstands in Prozent
+   
     public Label lblFuellstand = new Label("0 %");
 
     public Button btnBeenden = new Button("Beenden");
@@ -30,9 +30,6 @@ public class TankSimulator extends Frame {
 
     private Panel pnlNorth = new Panel();
 
-    // 2 Zeilen:
-    // 1. ProgressBar
-    // 2. Prozentanzeige
     private Panel pnlCenter = new Panel(new GridLayout(2, 1));
 
     private Panel pnlSouth = new Panel(new GridLayout(1, 0));
@@ -44,33 +41,32 @@ public class TankSimulator extends Frame {
 
         myTank = new Tank(0);
 
-        // ProgressBar einstellen
+       
         progressBar.setMinimum(0);
         progressBar.setMaximum(100);
         progressBar.setValue(0);
 
-        // Prozentzahl im ProgressBar anzeigen
+        
         progressBar.setStringPainted(true);
 
-        // Überschrift
+        
         this.lblUeberschrift.setFont(new Font("", Font.BOLD, 16));
 
-        // Überschrift
+       
         this.pnlNorth.add(this.lblUeberschrift);
 
-        // ProgressBar zuerst
+       
         this.pnlCenter.add(this.progressBar);
 
-        // Prozentanzeige darunter
+       
         this.pnlCenter.add(this.lblFuellstand);
-
-        // Buttons
+ 
         this.pnlSouth.add(this.btnEinfuellen);
         this.pnlSouth.add(this.btnVerbrauchen);
         this.pnlSouth.add(this.btnBeenden);
         this.pnlSouth.add(this.btnzuruecksetzen);
 
-        // Panels zum Fenster hinzufügen
+        
         this.add(this.pnlNorth, BorderLayout.NORTH);
         this.add(this.pnlCenter, BorderLayout.CENTER);
         this.add(this.pnlSouth, BorderLayout.SOUTH);
@@ -78,7 +74,7 @@ public class TankSimulator extends Frame {
         this.pack();
         this.setVisible(true);
 
-        // Ereignissteuerung
+       
         this.btnEinfuellen.addActionListener(myActionListener);
         this.btnVerbrauchen.addActionListener(myActionListener);
         this.btnBeenden.addActionListener(myActionListener);

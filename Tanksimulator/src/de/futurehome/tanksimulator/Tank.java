@@ -14,11 +14,11 @@ public class Tank {
 
     public void setFuellstand(double fuellstand) {
 
-        // Füllstand darf nicht kleiner als 0 sein
+       
         if (fuellstand < 0) {
             this.fuellstand = 0;
         }
-        // Füllstand darf nicht größer als 100 sein
+       
         else if (fuellstand > 100) {
             this.fuellstand = 100;
         }

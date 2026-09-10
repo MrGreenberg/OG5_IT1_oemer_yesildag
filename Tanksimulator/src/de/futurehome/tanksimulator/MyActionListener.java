@@ -15,12 +15,12 @@ public class MyActionListener implements ActionListener {
 
         Object obj = e.getSource();
 
-        // Beenden
+       
         if (obj == f.btnBeenden) {
             System.exit(0);
         }
 
-        // Einfüllen
+       
         if (obj == f.btnEinfuellen) {
 
             double fuellstand = f.myTank.getFuellstand();
@@ -29,14 +29,14 @@ public class MyActionListener implements ActionListener {
 
             f.myTank.setFuellstand(fuellstand);
 
-            // ProgressBar aktualisieren
+           
             f.progressBar.setValue((int) f.myTank.getFuellstand());
 
-            // Prozentanzeige aktualisieren
+           
             f.lblFuellstand.setText((int) f.myTank.getFuellstand() + " %");
         }
 
-        // Verbrauchen
+       
         if (obj == f.btnVerbrauchen) {
 
             double fuellstand = f.myTank.getFuellstand();
@@ -45,22 +45,22 @@ public class MyActionListener implements ActionListener {
 
             f.myTank.setFuellstand(fuellstand);
 
-            // ProgressBar aktualisieren
+            
             f.progressBar.setValue((int) f.myTank.getFuellstand());
 
-            // Prozentanzeige aktualisieren
+            
             f.lblFuellstand.setText((int) f.myTank.getFuellstand() + " %");
         }
 
-        // Zurücksetzen
+       
         if (obj == f.btnzuruecksetzen) {
 
             f.myTank.setFuellstand(0);
 
-            // ProgressBar zurücksetzen
+           
             f.progressBar.setValue(0);
 
-            // Prozentanzeige zurücksetzen
+           
             f.lblFuellstand.setText("0 %");
         }
     }
