@@ -9,8 +9,62 @@ package de.oszimt.starsim2099;
 public class Raumschiff {
 
 	// Attribute
+	private double posX;
+	public double getPosX() {
+		return posX;
+	}
+
+	public void setPosX(double posX) {
+		this.posX = posX;
+	}
+
+	public double getPosY() {
+		return posY;
+	}
+
+	public void setPosY(double posY) {
+		this.posY = posY;
+	}
+
+	public int getMaxLadekapazitaet() {
+		return maxKapazitaet;
+	}
+
+	public void setMaxLadekapazitaet(int maxLadekapazitaet) {
+		this.maxKapazitaet = maxLadekapazitaet;
+	}
+
+	public int getWinkel() {
+		return winkel;
+	}
+
+	public void setWinkel(int winkel) {
+		this.winkel = winkel;
+	}
+
+	private double posY;
+	private int maxKapazitaet;
+	private int winkel;
+	private String antrieb;
+	private String typ;
 	
 	// Methoden
+	
+	public String getTyp() {
+		return typ;
+	}
+
+	public void setTyp(String typ) {
+		this.typ = typ;
+	}
+
+	public String getAntrieb() {
+		return antrieb;
+	}
+
+	public void setAntrieb(String antrieb) {
+		this.antrieb = antrieb;
+	}
 
 	// Darstellung
 	public static char[][] getDarstellung() {
