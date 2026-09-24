@@ -9,8 +9,8 @@ public class Main {
 		GameControl meinGame = new GameControl();
 		
 		// Universum einrichten
-		int universumBreite = 320;
-		int universumHoehe = 100;
+		int universumBreite = 350;
+		int universumHoehe = 350;
 		Universum meinUniversum = new Universum(universumBreite, universumHoehe);
 		meinGame.setUniversum(meinUniversum);
 		
@@ -39,6 +39,11 @@ public class Main {
 		meineErde.setPosX(Math.random() * universumBreite);
 		meineErde.setPosY(Math.random() * universumHoehe);
 		meinGame.addPlanet(meineErde);
+		
+		Mond meineMond = new Mond();
+		meineMond.setPosX(Math.random() * universumBreite);
+		meineMond.setPosY(Math.random() * universumBreite);
+		meinGame.addMond(meineMond);
 
 		Planet meinCentaurus = new Planet();
 		meinCentaurus.setName("Centaurus 7");

@@ -17,6 +17,7 @@ public class GameControl {
 	private int score = 0;
 
 	private ArrayList<Planet> listPlaneten = new ArrayList<Planet>();
+	private ArrayList<Mond> listMond = new ArrayList<Mond>();
 	private ArrayList<Ladung> listLadungen = new ArrayList<Ladung>();
 
 	private Universum universum;
@@ -30,6 +31,8 @@ public class GameControl {
 	private static final CSIColor STAR_COLOR = CSIColor.FIREBRICK;
 	private static final CSIColor PLANET_COLOR = CSIColor.BLUE;
 	private static final CSIColor FREIGHT_COLOR = CSIColor.BROWNER;
+	private static final CSIColor MOND_COLOR = CSIColor.RED;
+	
 
 	public GameControl() {
 		Properties text = new Properties();
@@ -87,6 +90,19 @@ public class GameControl {
 		}
 	}
 
+	public void addMond(Mond meinMond) {
+		if (!listMond.contains(meinMond)) {
+			listMond.add(meinMond);
+		}
+	}
+	
+	
+	public void removeMond(Mond meinMond) {
+		if (listMond.contains(meinMond)) {
+			listMond.remove(meinMond);
+		}
+	}
+	
 	public void removePlanet(Planet meinPlanet) {
 		if (listPlaneten.contains(meinPlanet)) {
 			listPlaneten.remove(meinPlanet);
@@ -192,6 +208,14 @@ public class GameControl {
 		char[][] planetShape = Planet.getDarstellung();
 		drawShape(planetShape, PLANET_COLOR, transformedPos);
 	}
+	
+	private void drawMond(Mond mond) {
+		int centerX = (int) mond.getPosX();
+		int centerY = (int) mond.getPosY();
+		Position transformedPos = transformPos(new Position(centerX, centerY));
+		char[][] mondShape = Mond.getDarstellung2();
+		drawShape(mondShape, MOND_COLOR, transformedPos);
+	}
 
 	private void drawLadung(Ladung ladung) {
 		int centerX = (int) ladung.getPosX();
@@ -209,6 +233,10 @@ public class GameControl {
 		// Male alle Planeten
 		for (Planet planet : listPlaneten) {
 			drawPlanet(planet);
+		}
+		
+		for (Mond mond : listMond) {
+			drawMond(mond);
 		}
 		// Male alle Ladungen
 		for (Ladung ladung : listLadungen) {
@@ -231,6 +259,7 @@ public class GameControl {
 		meineConsole.print(24, 20, "Drücken Sie LEERTASTE zum Start!");
 		meineConsole.refresh();
 		meineConsole.waitKey(CharKey.SPACE);
+		meineConsole.print(1, 1, "Mit ESC Verlassen");
 
 		CharKey keyPressed = null;
 		do {
