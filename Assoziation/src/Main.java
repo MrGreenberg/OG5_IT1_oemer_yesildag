@@ -5,11 +5,11 @@ public class Main {
         Kunde kunde = new Kunde();
         kunde.setZahlungsart("PayPal");
 
-        Bestellung bestellung1 = new Bestellung();
+        Bestellung bestellung1 = new Bestellung(kunde);
         bestellung1.setPreis(49.99);
         bestellung1.setArt("Elektronik");
 
-        Bestellung bestellung2 = new Bestellung();
+        Bestellung bestellung2 = new Bestellung(kunde);
         bestellung2.setPreis(19.99);
         bestellung2.setArt("Buch");
 

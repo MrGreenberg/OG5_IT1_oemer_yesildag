@@ -4,7 +4,7 @@ public class Bestellung {
     private String art;
     private Kunde kunde;
 
-    public Bestellung() {
+    public Bestellung(Kunde kunde) {
     }
 
     public double getPreis() {
